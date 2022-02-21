@@ -38,23 +38,44 @@ new Product('tauntaun');
 new Product('unicorn');
 new Product('water-can');
 new Product('wine-glass');
+
 //function for rendering products
 function renderProducts(){
   let imgOneIndex = randomIndex();
   let imgTwoIndex = randomIndex();
   let imgThreeIndex = randomIndex();
-  let indexes = [imgOneIndex, imgTwoIndex, imgThreeIndex];
 
-  imgOne.src = allProducts[indexes[0]].src;
-  imgOne.alt = allProducts[indexes[0]].name;
+  // let indexes = [randomIndex(), randomIndex(), randomIndex()];
 
-  imgTwo.src = allProducts[indexes[1]].src;
-  imgTwo.alt = allProducts[indexes[1]].name;
+  // console.log(indexes);
+  // let valArr = [];
+  // for(let i = 0; i < indexes.length; i++){
+  //   if(valArr.includes(indexes[i])) {
+  //     indexes[i] = randomIndex();
+  //   }
+  //   valArr.push(indexes[i]);
+  // }
+  // console.log(indexes);
+ console.log(imgOneIndex, imgTwoIndex,imgThreeIndex);
+  while([imgOneIndex, imgTwoIndex].includes(imgThreeIndex)) {
+    imgThreeIndex = randomIndex();
+  }
+  while([imgOneIndex, imgThreeIndex].includes(imgTwoIndex)) {
+    imgTwoIndex = randomIndex();
+  }
+  console.log(imgOneIndex, imgTwoIndex,imgThreeIndex);
 
-  imgThree.src = allProducts[indexes[2]].src;
-  imgThree.alt = allProducts[indexes[2]].name;
+  imgOne.src = allProducts[imgOneIndex].src;
+  imgOne.alt = allProducts[imgOneIndex].name;
+
+  imgTwo.src = allProducts[imgTwoIndex].src;
+  imgTwo.alt = allProducts[imgTwoIndex].name;
+
+  imgThree.src = allProducts[imgThreeIndex].src;
+  imgThree.alt = allProducts[imgThreeIndex].name;
   
 }
+
 renderProducts();
 //random number generator for random index
 function randomIndex() {
