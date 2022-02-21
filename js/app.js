@@ -11,6 +11,12 @@ let resultList = document.getElementById('result-list');
   //all products array
 let allProducts = [];
 //Constructor - product name, img filepath, # of times the item has been shown, number of times the item has been clicked
+function Product(name, fileType = 'jpeg') {
+  this.name = name;
+  this.src = `${name}.${fileType}`;
+  this.timesShown = 0;
+  this.timesClicked = 0;
+}
 //function for rendering products
 //event handler for click
 //event listener for click
