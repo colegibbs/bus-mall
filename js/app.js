@@ -8,6 +8,7 @@ let imgTwo = document.getElementById('img-two');
 let imgThree = document.getElementById('img-three');
 let resultBtn = document.getElementById('result-btn');
 let resultList = document.getElementById('result-list');
+let clickAmount = 25;
   //all products array
 let allProducts = [];
 //Constructor - product name, img filepath, # of times the item has been shown, number of times the item has been clicked
