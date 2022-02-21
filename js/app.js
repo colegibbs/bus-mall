@@ -39,6 +39,13 @@ new Product('unicorn');
 new Product('water-can');
 new Product('wine-glass');
 //function for rendering products
+function renderProducts(){
+
+}
+//random number generator for random index
+function randomIndex() {
+  return Math.floor(Math.random() * allProducts.length);
+}
 //event handler for click
 //event listener for click
 //event handler for result button
