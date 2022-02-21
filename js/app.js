@@ -45,6 +45,7 @@ function renderProducts(){
   let imgOneIndex = randomIndex();
   let imgTwoIndex = randomIndex();
   let imgThreeIndex = randomIndex();
+  let indexes = [imgOneIndex, imgTwoIndex, imgThreeIndex];
 
   while([imgOneIndex, imgTwoIndex].includes(imgThreeIndex)) {
     imgThreeIndex = randomIndex();
@@ -52,6 +53,11 @@ function renderProducts(){
   while([imgOneIndex, imgThreeIndex].includes(imgTwoIndex)) {
     imgTwoIndex = randomIndex();
   }
+
+  for(let i = 0; i < indexes.length; i++) {
+    allProducts[indexes[i]].timesShown++;
+  }
+  console.log(allProducts);
 
   imgOne.src = allProducts[imgOneIndex].src;
   imgOne.alt = allProducts[imgOneIndex].name;
@@ -61,7 +67,6 @@ function renderProducts(){
 
   imgThree.src = allProducts[imgThreeIndex].src;
   imgThree.alt = allProducts[imgThreeIndex].name;
-  
 }
 
 renderProducts();
