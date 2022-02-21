@@ -45,25 +45,12 @@ function renderProducts(){
   let imgTwoIndex = randomIndex();
   let imgThreeIndex = randomIndex();
 
-  // let indexes = [randomIndex(), randomIndex(), randomIndex()];
-
-  // console.log(indexes);
-  // let valArr = [];
-  // for(let i = 0; i < indexes.length; i++){
-  //   if(valArr.includes(indexes[i])) {
-  //     indexes[i] = randomIndex();
-  //   }
-  //   valArr.push(indexes[i]);
-  // }
-  // console.log(indexes);
- console.log(imgOneIndex, imgTwoIndex,imgThreeIndex);
   while([imgOneIndex, imgTwoIndex].includes(imgThreeIndex)) {
     imgThreeIndex = randomIndex();
   }
   while([imgOneIndex, imgThreeIndex].includes(imgTwoIndex)) {
     imgTwoIndex = randomIndex();
   }
-  console.log(imgOneIndex, imgTwoIndex,imgThreeIndex);
 
   imgOne.src = allProducts[imgOneIndex].src;
   imgOne.alt = allProducts[imgOneIndex].name;
