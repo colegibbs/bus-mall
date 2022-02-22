@@ -1,0 +1,45 @@
+body {
+  background-color: #edf2fb;
+
+}
+
+header {
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  background-color: #abc4ff;
+  padding: 2%;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  border-left: solid 5px #d7e3fc;
+  border-right: solid 5px #d7e3fc;
+  padding-bottom: 200px;
+}
+
+div {
+  text-align: center;
+  display: inline-block;
+  margin-left: 45%;
+  margin-top: 3%;
+  background-color: #abc4ff;
+  padding: 1%;
+  border-radius: 12px;
+  border: double;
+}
+
+ul {
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
