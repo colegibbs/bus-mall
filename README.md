@@ -27,7 +27,7 @@ In this lab I created a webpage that acts as a moc product approvement test. The
 
 Author: Cole Gibbs
 
-PR: [Pull Request 2]()
+PR: [Pull Request 2](https://github.com/colegibbs/bus-mall/pull/2)
 
 ### Links and Resources 11
 
