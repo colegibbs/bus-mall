@@ -8,7 +8,7 @@ let imgTwo = document.getElementById('img-two');
 let imgThree = document.getElementById('img-three');
 let resultBtn = document.getElementById('result-btn');
 let resultList = document.getElementById('result-list');
-let clickAmount = 25;
+let clickAmount = 5;
   //all products array
 let allProducts = [];
 //Constructor - product name, img filepath, # of times the item has been shown, number of times the item has been clicked
@@ -57,7 +57,6 @@ function renderProducts(){
   for(let i = 0; i < indexes.length; i++) {
     allProducts[indexes[i]].timesShown++;
   }
-  console.log(allProducts);
 
   imgOne.src = allProducts[imgOneIndex].src;
   imgOne.alt = allProducts[imgOneIndex].name;
@@ -74,7 +73,26 @@ renderProducts();
 function randomIndex() {
   return Math.floor(Math.random() * allProducts.length);
 }
+
 //event handler for click
+function handleClick(event){
+  clickAmount--;
+  console.log(clickAmount);
+  let imgClicked = event.target.alt;
+  console.log(imgClicked);
+  for(let i = 0; i < allProducts.length; i++) {
+    if(imgClicked === allProducts[i].name) {
+      allProducts[i].timesClicked++;
+    }
+  }
+  console.log(allProducts);
+  renderProducts();
+  if(clickAmount === 0) {
+    container.removeEventListener('click', handleClick);
+  }
+}
+
 //event listener for click
+container.addEventListener('click', handleClick);
 //event handler for result button
 //event listener for resutl button
