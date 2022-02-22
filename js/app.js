@@ -6,8 +6,9 @@ let container = document.getElementById('container');
 let imgOne = document.getElementById('img-one');
 let imgTwo = document.getElementById('img-two');
 let imgThree = document.getElementById('img-three');
-let resultBtn = document.getElementById('result-btn');
-let resultList = document.getElementById('result-list');
+// let resultBtn = document.getElementById('result-btn');
+// let resultList = document.getElementById('result-list');
+const ctx = document.getElementById('my-chart').getContext('2d');
 let clickAmount = 25;
 //all products array
 let allProducts = [];
@@ -62,8 +63,6 @@ function renderProducts(){
     }
   }
 
-  console.log(indexes);
-
   for(let i = 0; i < indexes.length; i++) {
     allProducts[indexes[i]].timesShown++;
   }
@@ -91,18 +90,18 @@ function randomIndex() {
 //event handler for click
 function handleClick(event){
   clickAmount--;
-  console.log(clickAmount);
   let imgClicked = event.target.alt;
-  console.log(imgClicked);
   for(let i = 0; i < allProducts.length; i++) {
     if(imgClicked === allProducts[i].name) {
       allProducts[i].timesClicked++;
     }
   }
-  console.log(allProducts);
+
   renderProducts();
+
   if(clickAmount === 0) {
     container.removeEventListener('click', handleClick);
+    renderChart();
   }
 }
 
@@ -110,13 +109,65 @@ function handleClick(event){
 container.addEventListener('click', handleClick);
 
 //event handler for result button
-function handleResultBtn(event){
-  for(let i = 0; i < allProducts.length; i++) {
-    let liElem = document.createElement('li');
-    liElem.textContent = `${allProducts[i].name} was voted for ${allProducts[i].timesClicked} times and was show ${allProducts[i].timesShown} times.`;
-    resultList.appendChild(liElem);
-  }
-}
+// function handleResultBtn(event){
+//   for(let i = 0; i < allProducts.length; i++) {
+//     let liElem = document.createElement('li');
+//     liElem.textContent = `${allProducts[i].name} was voted for ${allProducts[i].timesClicked} times and was show ${allProducts[i].timesShown} times.`;
+//     resultList.appendChild(liElem);
+//   }
+// }
 
 //event listener for resutl button
-resultBtn.addEventListener('click', handleResultBtn);
+// resultBtn.addEventListener('click', handleResultBtn);
+
+function renderChart() {
+
+  let productNames = [];
+  let voteData = [];
+  let viewData = [];
+  for(let i = 0; i < allProducts.length; i++) {
+    productNames.push(allProducts[i].name);
+    voteData.push(allProducts[i].timesClicked);
+    viewData.push(allProducts[i].timesShown);
+  }
+
+  console.log(viewData);
+
+  const myObj = {
+    type: 'bar',
+    data: {
+      labels: productNames,
+      datasets: [{
+        label: '# of Votes',
+        data: voteData,
+        backgroundColor: [
+          'lightblue'
+        ],
+        borderColor: [
+          'darkblue'
+        ],
+        borderWidth: 1
+      },
+      {
+        label: '# of Views',
+        data: viewData,
+        backgroundColor: [
+          'darkblue'
+        ],
+        borderColor: [
+          'lightblue'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  };
+
+  const myChart = new Chart(ctx, myObj);
+}
