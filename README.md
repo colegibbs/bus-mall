@@ -8,7 +8,7 @@ In this lab I created a webpage that acts as a moc product approvement test. The
 
 Author: Cole Gibbs
 
-PR: [Pull Request 1]()
+PR: [Pull Request 1](https://github.com/colegibbs/bus-mall/pull/1)
 
 ### Links and Resources 10
 
@@ -17,4 +17,4 @@ PR: [Pull Request 1]()
 
 ### Reflections and Comments 10
 
-When I don't get what I want out of something when coding, I like to slow way down. I usually start with what errors I'm getting and if there aren't any, I follow the logic as closely as I can until I find the problem. That quote is true. I don't really remember or understand something as well if it is easy something. I guess it depends on the details. Today I learned how to interact with images using the DOM in JS. I also learned about the grid in css which I haven't used yet, but I'm excited to. I'm going to have to do a lot of css work between this class and my next one. I feel that styling doesn't come naturally to me. I don't know if I'll every be really good at it, but I think I can get decent at it if I focus on it for a week or so. I can be confusing and difficult to understand sometimes why one action made a particular box move in a very unexpected way. 
+When I don't get what I want out of something when coding, I like to slow way down. I usually start with what errors I'm getting and if there aren't any, I follow the logic as closely as I can until I find the problem. That quote is true. I don't really remember or understand something as well if it is easy something. I guess it depends on the details. Today I learned how to interact with images using the DOM in JS. I also learned about the grid in css which I haven't used yet, but I'm excited to. I'm going to have to do a lot of css work between this class and my next one. I feel that styling doesn't come naturally to me. I don't know if I'll every be really good at it, but I think I can get decent at it if I focus on it for a week or so. I can be confusing and difficult to understand sometimes why one action made a particular box move in a very unexpected way.
