@@ -1,7 +1,7 @@
 'use strict';
 
 //Global variables
-  //DOM windows
+//DOM windows
 let container = document.getElementById('container');
 let imgOne = document.getElementById('img-one');
 let imgTwo = document.getElementById('img-two');
@@ -9,7 +9,7 @@ let imgThree = document.getElementById('img-three');
 let resultBtn = document.getElementById('result-btn');
 let resultList = document.getElementById('result-list');
 let clickAmount = 25;
-  //all products array
+//all products array
 let allProducts = [];
 //Constructor - product name, img filepath, # of times the item has been shown, number of times the item has been clicked
 function Product(name, fileType = 'jpeg') {
@@ -99,7 +99,7 @@ container.addEventListener('click', handleClick);
 function handleResultBtn(event){
   for(let i = 0; i < allProducts.length; i++) {
     let liElem = document.createElement('li');
-    liElem.textContent = `<strong>${allProducts[i].name}<strong> was voted for ${allProducts[i].timesClicked} times and was show ${allProducts[i].timesShown} times.`;
+    liElem.textContent = `${allProducts[i].name} was voted for ${allProducts[i].timesClicked} times and was show ${allProducts[i].timesShown} times.`;
     resultList.appendChild(liElem);
   }
 }
