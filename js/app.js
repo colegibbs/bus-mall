@@ -44,17 +44,6 @@ new Product('wine-glass');
 //function for rendering products
 let indexes = [];
 function renderProducts(){
-  // let imgOneIndex = randomIndex();
-  // let imgTwoIndex = randomIndex();
-  // let imgThreeIndex = randomIndex();
-  // let indexes = [imgOneIndex, imgTwoIndex, imgThreeIndex];
-
-  // while([imgOneIndex, imgTwoIndex].includes(imgThreeIndex)) {
-  //   imgThreeIndex = randomIndex();
-  // }
-  // while([imgOneIndex, imgThreeIndex].includes(imgTwoIndex)) {
-  //   imgTwoIndex = randomIndex();
-  // }
 
   while(indexes.length < 6) {
     let index = randomIndex();
@@ -107,18 +96,6 @@ function handleClick(event){
 
 //event listener for click
 container.addEventListener('click', handleClick);
-
-//event handler for result button
-// function handleResultBtn(event){
-//   for(let i = 0; i < allProducts.length; i++) {
-//     let liElem = document.createElement('li');
-//     liElem.textContent = `${allProducts[i].name} was voted for ${allProducts[i].timesClicked} times and was show ${allProducts[i].timesShown} times.`;
-//     resultList.appendChild(liElem);
-//   }
-// }
-
-//event listener for resutl button
-// resultBtn.addEventListener('click', handleResultBtn);
 
 function renderChart() {
 
