@@ -41,31 +41,45 @@ new Product('water-can');
 new Product('wine-glass');
 
 //function for rendering products
+let indexes = [];
 function renderProducts(){
-  let imgOneIndex = randomIndex();
-  let imgTwoIndex = randomIndex();
-  let imgThreeIndex = randomIndex();
-  let indexes = [imgOneIndex, imgTwoIndex, imgThreeIndex];
+  // let imgOneIndex = randomIndex();
+  // let imgTwoIndex = randomIndex();
+  // let imgThreeIndex = randomIndex();
+  // let indexes = [imgOneIndex, imgTwoIndex, imgThreeIndex];
 
-  while([imgOneIndex, imgTwoIndex].includes(imgThreeIndex)) {
-    imgThreeIndex = randomIndex();
+  // while([imgOneIndex, imgTwoIndex].includes(imgThreeIndex)) {
+  //   imgThreeIndex = randomIndex();
+  // }
+  // while([imgOneIndex, imgThreeIndex].includes(imgTwoIndex)) {
+  //   imgTwoIndex = randomIndex();
+  // }
+
+  while(indexes.length < 6) {
+    let index = randomIndex();
+    while(!indexes.includes(index)) {
+      indexes.unshift(index);
+    }
   }
-  while([imgOneIndex, imgThreeIndex].includes(imgTwoIndex)) {
-    imgTwoIndex = randomIndex();
-  }
+
+  console.log(indexes);
 
   for(let i = 0; i < indexes.length; i++) {
     allProducts[indexes[i]].timesShown++;
   }
 
-  imgOne.src = allProducts[imgOneIndex].src;
-  imgOne.alt = allProducts[imgOneIndex].name;
+  let indexOne = indexes.pop();
+  let indexTwo = indexes.pop();
+  let indexThree = indexes.pop();
 
-  imgTwo.src = allProducts[imgTwoIndex].src;
-  imgTwo.alt = allProducts[imgTwoIndex].name;
+  imgOne.src = allProducts[indexOne].src;
+  imgOne.alt = allProducts[indexOne].name;
 
-  imgThree.src = allProducts[imgThreeIndex].src;
-  imgThree.alt = allProducts[imgThreeIndex].name;
+  imgTwo.src = allProducts[indexTwo].src;
+  imgTwo.alt = allProducts[indexTwo].name;
+
+  imgThree.src = allProducts[indexThree].src;
+  imgThree.alt = allProducts[indexThree].name;
 }
 
 renderProducts();
