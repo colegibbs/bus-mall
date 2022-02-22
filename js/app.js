@@ -99,7 +99,7 @@ container.addEventListener('click', handleClick);
 function handleResultBtn(event){
   for(let i = 0; i < allProducts.length; i++) {
     let liElem = document.createElement('li');
-    liElem.textContent = `${allProducts[i].name} was voted for ${allProducts[i].timesClicked} times and was show ${allProducts[i].timesShown} times.`;
+    liElem.textContent = `<strong>${allProducts[i].name}<strong> was voted for ${allProducts[i].timesClicked} times and was show ${allProducts[i].timesShown} times.`;
     resultList.appendChild(liElem);
   }
 }
