@@ -103,7 +103,7 @@ function handleClick(event){
     //local storage
     let products = JSON.stringify(allProducts);
     localStorage.setItem('products', products);
-  };
+  }
 }
 
 //event listener for click
