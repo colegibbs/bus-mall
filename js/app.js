@@ -12,6 +12,36 @@ const ctx = document.getElementById('my-chart').getContext('2d');
 let clickAmount = 25;
 //all products array
 let allProducts = [];
+
+//local storage
+let parsedProducts = JSON.parse(localStorage.getItem('products'));
+
+//local storage data use
+if(parsedProducts){
+  allProducts = parsedProducts;
+}
+else{
+  new Product('bag');
+  new Product('banana');
+  new Product('bathroom');
+  new Product('boots');
+  new Product('breakfast');
+  new Product('bubblegum');
+  new Product('chair');
+  new Product('cthulhu');
+  new Product('dog-duck');
+  new Product('dragon');
+  new Product('pen');
+  new Product('pet-sweep');
+  new Product('scissors');
+  new Product('shark');
+  new Product('sweep', 'png');
+  new Product('tauntaun');
+  new Product('unicorn');
+  new Product('water-can');
+  new Product('wine-glass');
+}
+
 //Constructor - product name, img filepath, # of times the item has been shown, number of times the item has been clicked
 function Product(name, fileType = 'jpeg') {
   this.name = name;
@@ -20,26 +50,6 @@ function Product(name, fileType = 'jpeg') {
   this.timesClicked = 0;
   allProducts.push(this);
 }
-// instantiate objects using Product constructor
-new Product('bag');
-new Product('banana');
-new Product('bathroom');
-new Product('boots');
-new Product('breakfast');
-new Product('bubblegum');
-new Product('chair');
-new Product('cthulhu');
-new Product('dog-duck');
-new Product('dragon');
-new Product('pen');
-new Product('pet-sweep');
-new Product('scissors');
-new Product('shark');
-new Product('sweep', 'png');
-new Product('tauntaun');
-new Product('unicorn');
-new Product('water-can');
-new Product('wine-glass');
 
 //function for rendering products
 let indexes = [];
@@ -90,6 +100,9 @@ function handleClick(event){
   if(clickAmount === 0) {
     container.removeEventListener('click', handleClick);
     renderChart();
+    //local storage
+    let products = JSON.stringify(allProducts);
+    localStorage.setItem('products', products);
   }
 }
 
