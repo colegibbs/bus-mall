@@ -50,26 +50,6 @@ function Product(name, fileType = 'jpeg') {
   this.timesClicked = 0;
   allProducts.push(this);
 }
-// instantiate objects using Product constructor
-// new Product('bag');
-// new Product('banana');
-// new Product('bathroom');
-// new Product('boots');
-// new Product('breakfast');
-// new Product('bubblegum');
-// new Product('chair');
-// new Product('cthulhu');
-// new Product('dog-duck');
-// new Product('dragon');
-// new Product('pen');
-// new Product('pet-sweep');
-// new Product('scissors');
-// new Product('shark');
-// new Product('sweep', 'png');
-// new Product('tauntaun');
-// new Product('unicorn');
-// new Product('water-can');
-// new Product('wine-glass');
 
 //function for rendering products
 let indexes = [];
