@@ -52,22 +52,21 @@ function renderProducts(){
     }
   }
 
-  for(let i = 0; i < indexes.length; i++) {
-    allProducts[indexes[i]].timesShown++;
-  }
-
   let indexOne = indexes.pop();
   let indexTwo = indexes.pop();
   let indexThree = indexes.pop();
 
   imgOne.src = allProducts[indexOne].src;
   imgOne.alt = allProducts[indexOne].name;
+  allProducts[indexOne].timesShown++;
 
   imgTwo.src = allProducts[indexTwo].src;
   imgTwo.alt = allProducts[indexTwo].name;
+  allProducts[indexTwo].timesShown++;
 
   imgThree.src = allProducts[indexThree].src;
   imgThree.alt = allProducts[indexThree].name;
+  allProducts[indexThree].timesShown++;
 }
 
 renderProducts();
